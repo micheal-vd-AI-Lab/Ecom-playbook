@@ -1,177 +1,22 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="ECOM Playbook — a practical e-commerce course built by m.v.d_spam.">
-  <title>ECOM Playbook — Built by m.v.d_spam</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="ECOM Playbook — a complete beginner-to-launch e-commerce course.">
+<title>ECOM Playbook — Built by m.v.d_spam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="progress-top"><div id="topProgress"></div></div>
-
-  <header class="topbar">
-    <a class="logo" href="#home">ECOM<span>.</span></a>
-    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">☰</button>
-    <nav id="mainNav">
-      <a href="#course">Course</a>
-      <a href="#tools">Tools</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    <div class="top-actions">
-      <span id="progressText">0% complete</span>
-      <a class="pill dark" href="#course">Continue →</a>
-    </div>
-  </header>
-
-  <main id="home">
-    <section class="cover">
-      <div class="cover-image">
-        <img src="cover.jpg" alt="ECOM course cover">
-        <div class="image-overlay"></div>
-        <div class="cover-badge">ECOM PLAYBOOK<br><small>THE COMPLETE ROADMAP</small></div>
-      </div>
-      <div class="cover-copy">
-        <div class="eyebrow">A PRACTICAL E-COMMERCE COURSE</div>
-        <h1>Build the store.<br><em>Get the sale.</em></h1>
-        <p class="lead">A step-by-step system for choosing products, building an offer, launching traffic, reading your numbers and scaling without guessing.</p>
-        <div class="cover-buttons">
-          <a class="pill lime" href="#course">Start the course →</a>
-          <button class="pill outline" id="resetProgress">Reset progress</button>
-        </div>
-        <div class="mini-stats">
-          <div><b>8</b><span>modules</span></div>
-          <div><b>32</b><span>lessons</span></div>
-          <div><b>4</b><span>tools</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="dashboard" id="course">
-      <aside class="sidebar">
-        <div class="side-title">COURSE MAP</div>
-        <div id="moduleNav"></div>
-        <div class="side-progress">
-          <div class="side-progress-head"><span>Your progress</span><b id="sidePercent">0%</b></div>
-          <div class="bar"><i id="sideBar"></i></div>
-        </div>
-      </aside>
-
-      <section class="course-area">
-        <div class="course-head">
-          <div>
-            <div class="eyebrow">YOUR ROADMAP</div>
-            <h2>Learn. Apply. Measure.</h2>
-          </div>
-          <p>Work through the modules in order. Every lesson ends with an action so you're building while you're learning.</p>
-        </div>
-        <div id="lessonView"></div>
-      </section>
-    </section>
-
-    <section class="tools-section" id="tools">
-      <div class="eyebrow">PRACTICAL TOOLS</div>
-      <h2>Don't just learn it.<br><em>Use it.</em></h2>
-
-      <div class="tool-tabs">
-        <button class="tool-tab active" data-tool="score">Product scorecard</button>
-        <button class="tool-tab" data-tool="profit">Profit calculator</button>
-        <button class="tool-tab" data-tool="hooks">Ad hook generator</button>
-        <button class="tool-tab" data-tool="launch">Launch checklist</button>
-      </div>
-
-      <div class="tool-panels">
-        <div class="tool-panel active" id="score">
-          <div class="tool-copy"><span class="tool-icon">01</span><h3>Product scorecard</h3><p>Score an idea from 1–10 across the factors that matter. Use the total as a discussion starter, not a guarantee of success.</p></div>
-          <div class="score-grid">
-            <label>Problem strength <input type="range" min="1" max="10" value="7" data-score></label>
-            <label>Demand evidence <input type="range" min="1" max="10" value="7" data-score></label>
-            <label>Margin potential <input type="range" min="1" max="10" value="6" data-score></label>
-            <label>Content potential <input type="range" min="1" max="10" value="8" data-score></label>
-            <label>Differentiation <input type="range" min="1" max="10" value="6" data-score></label>
-            <label>Shipping simplicity <input type="range" min="1" max="10" value="7" data-score></label>
-          </div>
-          <div class="score-result"><span>Score</span><strong id="scoreValue">41/60</strong><small id="scoreLabel">Promising — validate it.</small></div>
-        </div>
-
-        <div class="tool-panel" id="profit">
-          <div class="tool-copy"><span class="tool-icon">02</span><h3>Profit calculator</h3><p>Enter simple unit economics. This estimates contribution before fixed overheads and tax.</p></div>
-          <div class="calc-grid">
-            <label>Selling price <input id="price" type="number" value="499" min="0"></label>
-            <label>Product cost <input id="cost" type="number" value="150" min="0"></label>
-            <label>Shipping/fulfillment <input id="shipping" type="number" value="70" min="0"></label>
-            <label>Payment fees % <input id="fees" type="number" value="3" min="0" step=".1"></label>
-            <label>Ad cost per order <input id="adCost" type="number" value="100" min="0"></label>
-          </div>
-          <div class="calc-result"><div><span>Contribution / order</span><b id="contribution">R164.03</b></div><div><span>Contribution margin</span><b id="margin">32.9%</b></div></div>
-        </div>
-
-        <div class="tool-panel" id="hooks">
-          <div class="tool-copy"><span class="tool-icon">03</span><h3>Ad hook generator</h3><p>Choose an angle and generate opening lines you can adapt to your product and audience.</p></div>
-          <div class="hook-controls">
-            <input id="productName" placeholder="Your product e.g. gym bag" value="gym bag">
-            <select id="angle"><option>Pain point</option><option>Curiosity</option><option>Transformation</option><option>Social proof</option><option>Problem/solution</option></select>
-            <button class="pill dark" id="generateHooks">Generate hooks</button>
-          </div>
-          <div class="hooks-output" id="hooksOutput"></div>
-        </div>
-
-        <div class="tool-panel" id="launch">
-          <div class="tool-copy"><span class="tool-icon">04</span><h3>Launch checklist</h3><p>Tick everything before sending meaningful traffic to a new store.</p></div>
-          <div class="checklist" id="checklist">
-            <label><input type="checkbox"> Product page clearly explains the outcome</label>
-            <label><input type="checkbox"> Mobile layout has been tested</label>
-            <label><input type="checkbox"> Checkout works from start to finish</label>
-            <label><input type="checkbox"> Shipping, returns and contact details are visible</label>
-            <label><input type="checkbox"> Analytics/pixels are installed and tested</label>
-            <label><input type="checkbox"> At least 3 creative angles are ready</label>
-            <label><input type="checkbox"> Customer objections are answered</label>
-            <label><input type="checkbox"> A small test budget is defined</label>
-          </div>
-          <div class="check-result"><b id="checkCount">0/8</b> launch items complete</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="principles">
-      <div class="eyebrow">THE RULES</div>
-      <h2>Eight principles<br>worth remembering.</h2>
-      <div class="principle-grid">
-        <div><b>01</b><h3>Customer first</h3><p>Start with a person and a problem. The product is the vehicle.</p></div>
-        <div><b>02</b><h3>Evidence beats hype</h3><p>Likes are interesting. Buying intent, repeat demand and margin are better.</p></div>
-        <div><b>03</b><h3>Launch before perfect</h3><p>A real customer teaches you more than another week of tweaking a logo.</p></div>
-        <div><b>04</b><h3>One variable at a time</h3><p>Change your test deliberately so you know what caused the result.</p></div>
-        <div><b>05</b><h3>Numbers tell the story</h3><p>Track traffic, conversion, AOV, CAC and contribution margin.</p></div>
-        <div><b>06</b><h3>Creative is leverage</h3><p>Better angles and clearer demonstrations can outperform bigger budgets.</p></div>
-        <div><b>07</b><h3>Protect cash</h3><p>Revenue is not profit. Know when money leaves your business.</p></div>
-        <div><b>08</b><h3>Build systems</h3><p>Document what works so growth doesn't depend on memory and chaos.</p></div>
-      </div>
-    </section>
-
-    <section class="faq" id="faq">
-      <div class="eyebrow">FAQ</div><h2>Before you start.</h2>
-      <details><summary>Do I need a big budget?</summary><p>No. You can learn and validate with a small budget. Never spend money you cannot afford to lose.</p></details>
-      <details><summary>Is this only for dropshipping?</summary><p>No. The same research, offer, acquisition, conversion and unit-economic principles apply to many e-commerce models.</p></details>
-      <details><summary>Which platform should I use?</summary><p>Choose a platform that fits your skills, budget and business model. The course principles are platform-agnostic.</p></details>
-      <details><summary>How do I know when to scale?</summary><p>Scale when your economics are understood, tracking is reliable and you can explain why customers are buying — not simply because one day performed well.</p></details>
-    </section>
-
-    <section class="final">
-      <div class="eyebrow">YOUR NEXT MOVE</div>
-      <h2>Pick one idea.<br>Do the work.</h2>
-      <p>The fastest way to understand e-commerce is to apply the lesson immediately.</p>
-      <a class="pill light" href="#course">Back to the course ↑</a>
-    </section>
-  </main>
-
-  <footer>
-    <div><strong>ECOM<span>.</span></strong><small>Practical e-commerce education.</small></div>
-    <div>Built by <b>m.v.d_spam</b></div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+<div class="progress-top"><div id="topProgress"></div></div>
+<header class="topbar"><a class="logo" href="#home">ECOM<span>.</span></a><button class="mobile-toggle" id="mobileToggle">☰</button><nav id="mainNav"><a href="#home">Home</a><a href="#course">Course</a><a href="#tools">Tools</a><a href="#faq">FAQ</a></nav><div class="top-actions"><span id="progressText">0% complete</span><a class="pill dark" href="#course">Continue →</a></div></header>
+<main id="home">
+<section class="cover"><div class="cover-image"><img src="cover.jpg" alt="ECOM course cover"><div class="image-overlay"></div><div class="cover-badge">ECOM PLAYBOOK<br><small>THE COMPLETE ROADMAP</small></div></div><div class="cover-copy"><div class="eyebrow">BEGINNER → FIRST SALE → SCALE</div><h1>Build the store.<br><em>Build the business.</em></h1><p class="lead">A practical, from-scratch e-commerce curriculum covering product research, validation, sourcing, offers, stores, content, ads, fulfilment, numbers, retention and scaling.</p><div class="cover-buttons"><a class="pill lime" href="#course">Start from zero →</a><button class="pill outline" id="resetProgress">Reset progress</button></div><div class="mini-stats"><div><b id="moduleCount">10</b><span>modules</span></div><div><b id="lessonCount">50</b><span>deep lessons</span></div><div><b>4</b><span>built-in tools</span></div></div></div></section>
+<section class="promise"><div><div class="eyebrow">WHAT YOU GET</div><h2>Not just tips.<br><em>A complete operating system.</em></h2></div><div class="promise-grid"><article><b>01</b><h3>Understand</h3><p>Learn how the entire e-commerce machine works before spending money.</p></article><article><b>02</b><h3>Build</h3><p>Turn an idea into a product, offer, store and launch plan.</p></article><article><b>03</b><h3>Launch</h3><p>Get traffic, make the first sale, diagnose problems and improve.</p></article><article><b>04</b><h3>Scale</h3><p>Use margins, conversion, retention and systems to grow responsibly.</p></article></div></section>
+<section class="dashboard" id="course"><aside class="sidebar"><div class="side-title">COURSE MAP</div><div id="moduleNav"></div><div class="side-progress"><div class="side-progress-head"><span>Your progress</span><b id="sidePercent">0%</b></div><div class="bar"><i id="sideBar"></i></div></div></aside><section class="course-area"><div class="course-head"><div><div class="eyebrow">THE CURRICULUM</div><h2>Learn. Apply. Measure.</h2></div><p>Open any lesson for a full breakdown, step-by-step actions, examples, mistakes to avoid and a completion checklist.</p></div><div id="lessonView"></div></section></section>
+<section class="tools-section" id="tools"><div class="eyebrow">PRACTICAL TOOLS</div><h2>Don't just learn it.<br><em>Use it.</em></h2><div class="tool-tabs"><button class="tool-tab active" data-tool="score">Product scorecard</button><button class="tool-tab" data-tool="profit">Profit calculator</button><button class="tool-tab" data-tool="hooks">Ad hook generator</button><button class="tool-tab" data-tool="launch">Launch checklist</button></div><div class="tool-panel" id="score"><h3>Product scorecard</h3><p>Rate a product before you build around it.</p><div class="score-grid" id="scoreInputs"></div><div class="result"><span>Opportunity score</span><strong id="scoreValue">0/50</strong></div></div><div class="tool-panel hidden" id="profit"><h3>Profit calculator</h3><div class="calc-grid"><label>Selling price<input id="price" type="number" value="499"></label><label>Product cost<input id="cost" type="number" value="150"></label><label>Shipping/fulfilment<input id="ship" type="number" value="60"></label><label>Payment fees %<input id="fees" type="number" value="3"></label><label>Ad cost per order<input id="adcost" type="number" value="100"></label></div><div class="result"><span>Estimated profit/order</span><strong id="profitValue">R174.03</strong></div></div><div class="tool-panel hidden" id="hooks"><h3>Ad hook generator</h3><p>Enter a product and get angles to test.</p><input id="hookProduct" class="wide" placeholder="e.g. posture corrector"><button class="pill dark" id="generateHooks">Generate hooks</button><div id="hookOutput" class="hook-output"></div></div><div class="tool-panel hidden" id="launch"><h3>Launch checklist</h3><div id="launchList" class="checklist"></div></div></section>
+<section class="faq" id="faq"><div class="eyebrow">FAQ</div><h2>Questions beginners usually have.</h2><div class="faq-list" id="faqList"></div></section>
+</main><footer><span>ECOM PLAYBOOK</span><span>Built by m.v.d_spam</span></footer>
+<script src="script.js"></script>
+</body></html>

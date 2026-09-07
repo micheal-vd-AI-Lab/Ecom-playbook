@@ -1,140 +1,104 @@
-const modules = [
-  {title:"Product Research", desc:"Find products worth testing by starting with problems, customers and evidence.", lessons:[
-    ["The product rule","What makes an e-commerce product interesting: problem, audience, margin and demonstrability.","Write down 3 customer problems you understand personally."],
-    ["Where ideas come from","Use marketplaces, social platforms, communities, reviews and competitor stores as research sources.","Collect 10 ideas without deciding which one is the winner."],
-    ["Demand signals","Separate attention from buying intent and learn what evidence is actually useful.","For your top 3 ideas, record 3 demand signals each."],
-    ["Competition research","Competitors can validate demand while revealing gaps you can improve.","Create a one-page competitor comparison."],
-  ]},
-  {title:"Validation", desc:"Test the idea before committing serious time or money.", lessons:[
-    ["The validation loop","Form a hypothesis, run a small test, measure and update your decision.","Write one sentence: 'I believe X because Y, and I'll test it by Z.'"],
-    ["Offer-market fit","A strong product can still fail if the offer is unclear or aimed at the wrong person.","Describe your ideal customer and desired outcome in one paragraph."],
-    ["Test budget & risk","Set a maximum test budget and define what result would make you continue or stop.","Choose a budget you can genuinely afford to lose."],
-    ["Kill, improve or continue","Learn to treat weak results as information instead of forcing an idea.","Define your continue/stop criteria before your next test."],
-  ]},
-  {title:"Store Building", desc:"Build a storefront that answers questions and removes friction.", lessons:[
-    ["Store structure","Home, product, trust, shipping, returns and contact information all have jobs.","Sketch your store's navigation on paper."],
-    ["Product page anatomy","Headline, visual proof, benefits, details, objections, social proof and CTA.","Rewrite your product page into a clear section-by-section outline."],
-    ["Trust & friction","Make buying feel safe: transparent policies, clear delivery expectations and useful support.","List the 5 questions a nervous buyer would ask."],
-    ["Mobile-first QA","Most store experiences need to be checked on a phone, not just a laptop.","Test every major page at mobile width and note 5 fixes."],
-  ]},
-  {title:"Offers & Copy", desc:"Make the value obvious and give customers a reason to act.", lessons:[
-    ["Sell the outcome","Features describe the product. Benefits explain why the customer should care.","Turn 5 features into customer outcomes."],
-    ["Positioning","Choose who the product is for and what makes your version meaningfully different.","Write: 'For [customer], who wants [outcome], we provide [difference].'"],
-    ["Pricing & bundles","Price around value and economics, then use bundles carefully to increase AOV.","Create a core offer and one sensible bundle."],
-    ["Objections & proof","Answer the reasons someone might hesitate before asking them to buy.","Write 7 objections and a concise response to each."],
-  ]},
-  {title:"Traffic", desc:"Bring qualified attention through organic content and paid acquisition.", lessons:[
-    ["Creative angles","One product can have many stories: problem, demo, transformation, comparison and proof.","Write 10 different angles for one product."],
-    ["Organic content","Short-form content works best when the first seconds earn attention and the rest delivers value.","Draft 5 hooks and 5 video concepts."],
-    ["Paid traffic basics","Understand campaign objective, creative, audience, budget and measurement.","Build a simple test matrix with 3 creatives and 2 angles."],
-    ["Creator & UGC strategy","Authentic demonstrations can make unfamiliar products easier to understand.","Write a 20-second creator brief."],
-  ]},
-  {title:"Conversion", desc:"Turn visits into customers by fixing the biggest points of friction.", lessons:[
-    ["Conversion rate","Conversion is a system: traffic quality, offer, page, trust, price and checkout all matter.","Calculate CVR from a sample set of sessions and orders."],
-    ["Diagnosing a funnel","Use drop-offs to decide where to investigate instead of changing everything at once.","Map your funnel from click to purchase."],
-    ["Checkout friction","Extra uncertainty and unnecessary steps can cost sales.","List every point where a buyer could hesitate."],
-    ["Retention","The first sale can be the beginning of the relationship, not the end.","Plan one post-purchase message and one repeat-purchase offer."],
-  ]},
-  {title:"Numbers", desc:"Know the metrics that tell you whether the business is healthy.", lessons:[
-    ["AOV & CVR","Average order value and conversion rate help explain revenue performance.","Calculate AOV for your last 10 hypothetical orders."],
-    ["CAC & contribution","Customer acquisition cost only makes sense alongside your contribution margin.","Build a simple per-order economics table."],
-    ["Break-even thinking","Know the maximum you can spend to acquire a customer without losing money.","Calculate your break-even CAC from your own assumptions."],
-    ["Dashboard basics","A small set of consistent KPIs beats a giant dashboard nobody checks.","Choose 6 weekly metrics and define each one."],
-  ]},
-  {title:"Scaling", desc:"Turn a working system into repeatable growth while protecting cash and quality.", lessons:[
-    ["When to scale","Scale from repeatable evidence, not one lucky day.","Write 3 conditions that must be true before increasing spend."],
-    ["Creative iteration","Keep the winning concept and iterate the hook, proof, format or opening.","Create 5 variations of your best concept."],
-    ["Operations & cash flow","Inventory, suppliers, fulfillment, refunds and payment timing become more important as volume rises.","Map the cash cycle from customer payment to supplier payment."],
-    ["Build the machine","Document processes so someone else could follow them.","Create your first SOP for a recurring task."],
-  ]}
+const modules=[
+{name:'E-commerce Foundations',desc:'Understand the business model, economics and paths you can take.',lessons:[
+['What e-commerce actually is','Learn the full journey from stranger to repeat customer and where profit is created.','foundation'],
+['Choose your business model','Compare reselling, dropshipping, private label, print-on-demand, digital products and marketplaces.','foundation'],
+['How the money works','Understand revenue, gross margin, contribution margin, CAC, AOV, conversion rate and break-even.','numbers'],
+['Set your goals and budget','Build a realistic starting budget, time commitment and first-90-day target.','planning'],
+['Your first e-commerce roadmap','Turn everything into a simple sequence: research → validate → build → launch → improve.','planning']]},
+{name:'Market & Customer Research',desc:'Find problems people care about and markets worth entering.',lessons:[
+['Pick a market, not a random product','Choose a customer group with a painful problem, buying power and reachable attention.','research'],
+['Find customer problems','Use reviews, forums, comments, search suggestions and competitor feedback to collect real language.','research'],
+['Study competitors properly','Map offers, prices, positioning, creatives, reviews, objections and gaps instead of copying a store.','research'],
+['Build a customer avatar','Define the buyer’s situation, desired outcome, fears, objections, triggers and buying context.','research'],
+['Validate demand before spending','Use a low-cost validation process to test interest before ordering inventory or building a huge brand.','validation']]},
+{name:'Product & Supplier',desc:'Select, source and validate a product with a viable path to delivery.',lessons:[
+['Product selection framework','Score products for demand, problem intensity, margin, differentiation, content potential and operational risk.','product'],
+['Source suppliers','Understand supplier outreach, samples, MOQ, lead time, quality control and negotiation.','sourcing'],
+['Order and inspect samples','Create a sample-testing checklist covering quality, packaging, instructions, durability and customer experience.','sourcing'],
+['Shipping and fulfilment','Compare self-fulfilment, 3PLs, dropshipping and marketplace fulfilment; plan delivery expectations.','operations'],
+['Avoid bad products','Spot fragile, regulated, saturated, trademark-sensitive or low-margin products before they become expensive problems.','risk']]},
+{name:'Offer, Pricing & Brand',desc:'Turn a product into an offer people understand and want.',lessons:[
+['Build an irresistible offer','Combine product, outcome, proof, bonuses, guarantee and urgency without making dishonest promises.','offer'],
+['Price for profit','Set price from costs, desired margin, market positioning and perceived value—not just competitor price.','pricing'],
+['Create your positioning','Answer who it is for, what problem it solves, why it is different and why customers should believe you.','brand'],
+['Name, identity and trust','Build a simple identity, product presentation and trust layer that makes the store feel legitimate.','brand'],
+['Write product messaging','Turn features into benefits, outcomes and proof while handling the customer’s biggest objections.','copy']]},
+{name:'Store From Scratch',desc:'Build a store that is clear, credible and designed to convert.',lessons:[
+['Choose your store setup','Understand hosted stores, self-hosted sites and marketplaces; choose based on skill, budget and goals.','store'],
+['Store structure','Plan the homepage, collection pages, product page, cart, checkout, policies, contact and support pages.','store'],
+['The high-converting product page','Build above-the-fold clarity, benefits, proof, FAQs, objections, shipping info and a strong CTA.','conversion'],
+['Payments, policies and trust','Set up secure payments and clear shipping, returns, privacy and terms appropriate to your jurisdiction.','trust'],
+['Mobile speed and QA','Test every link, form, image, variant, checkout step and mobile layout before sending paid traffic.','qa']]},
+{name:'Content & Organic Traffic',desc:'Create attention and trust without needing a huge audience.',lessons:[
+['The content machine','Build a repeatable system of hooks, demonstrations, education, proof, comparison and objection content.','content'],
+['Write strong hooks','Use curiosity, pain, outcome, specificity and pattern interrupts without making misleading claims.','content'],
+['Shoot product content','Use simple phone footage: problem, product, demonstration, close-ups, proof and CTA.','creative'],
+['Organic distribution','Choose platforms where your customer already spends attention and post consistently with native formats.','traffic'],
+['Turn content into sales','Connect each post to a product page, offer, retargeting audience or email/SMS capture.','funnel']]},
+{name:'Paid Ads & Launch',desc:'Launch controlled tests, read the data and improve creative before scaling.',lessons:[
+['Understand paid acquisition','Learn the relationship between CPM, CTR, CPC, conversion rate, CAC and contribution margin.','ads'],
+['Set up tracking','Plan analytics, events, UTM naming and a simple dashboard before you launch.','tracking'],
+['Creative testing','Test different hooks, angles, formats, creators and demonstrations—not tiny cosmetic changes.','ads'],
+['Campaign structure','Start simple: clear objective, sensible audience, enough creative variation and a defined test budget.','ads'],
+['Diagnose a weak launch','Use a funnel diagnosis: no impressions → no clicks → no add-to-carts → no purchases → poor economics.','diagnosis']]},
+{name:'Fulfilment & Customer Experience',desc:'Deliver reliably and turn buyers into customers who trust you.',lessons:[
+['Order workflow','Map the order from payment to confirmation, picking, packing, dispatch, tracking and delivery.','operations'],
+['Inventory basics','Understand reorder points, safety stock, lead times, stockouts and cash tied up in inventory.','inventory'],
+['Customer support system','Create templates and processes for shipping questions, returns, damaged goods and complaints.','support'],
+['Returns, refunds and chargebacks','Build fair policies and understand why unclear expectations create disputes.','risk'],
+['Create a memorable unboxing','Use packaging, instructions, inserts and post-purchase communication to reduce confusion and increase trust.','experience']]},
+{name:'Conversion, Analytics & Retention',desc:'Stop guessing. Use numbers and customer behaviour to improve the machine.',lessons:[
+['Read your funnel','Track sessions, product views, add-to-cart, checkout and purchase rates to locate leaks.','analytics'],
+['A/B testing correctly','Change one meaningful variable, define the metric and give a test enough traffic to be useful.','testing'],
+['Increase average order value','Use bundles, quantity breaks, cross-sells and post-purchase offers where they genuinely help.','aov'],
+['Email and retention','Build welcome, abandoned-cart, post-purchase, review and win-back flows.','retention'],
+['Customer lifetime value','Understand repeat rate, contribution margin and how retention changes what you can afford to spend to acquire customers.','ltv']]},
+{name:'Scale, Systems & Long-Term Growth',desc:'Build a real business instead of endlessly chasing the next product.',lessons:[
+['Know when to scale','Scale when the offer, fulfilment and economics are repeatable—not because one ad had a good day.','scale'],
+['Build SOPs','Document recurring work so another person can eventually perform it consistently.','systems'],
+['Hire and delegate','Identify bottlenecks, write outcomes for roles and delegate repeatable tasks before complex strategy.','team'],
+['Cash flow and forecasting','Separate profit from cash, plan inventory purchases, ad spend, refunds and taxes.','finance'],
+['Your 90-day execution plan','Turn the course into weekly targets from zero to validated offer, launch, optimisation and scale.','execution']]}
 ];
-
-let state = JSON.parse(localStorage.getItem("ecomPlaybookProgress") || '{"done":[]}');
-let currentModule = 0, currentLesson = 0;
-
-function save(){localStorage.setItem("ecomPlaybookProgress",JSON.stringify(state)); updateProgress();}
-function key(m,l){return `${m}-${l}`;}
-function isDone(m,l){return state.done.includes(key(m,l));}
-function totalLessons(){return modules.reduce((n,m)=>n+m.lessons.length,0);}
-function doneCount(){return state.done.length;}
-function updateProgress(){
-  const pct=Math.round(doneCount()/totalLessons()*100);
-  document.getElementById("topProgress").style.width=pct+"%";
-  document.getElementById("progressText").textContent=pct+"% complete";
-  document.getElementById("sidePercent").textContent=pct+"%";
-  document.getElementById("sideBar").style.width=pct+"%";
-}
-function renderNav(){
-  const el=document.getElementById("moduleNav");
-  el.innerHTML=modules.map((m,i)=>`<div class="module-link ${i===currentModule?"active":""}" data-module="${i}"><b>${String(i+1).padStart(2,"0")}</b><span>${m.title}</span></div>`).join("");
-  el.querySelectorAll(".module-link").forEach(x=>x.onclick=()=>{currentModule=+x.dataset.module;currentLesson=0;render();});
-}
-function render(){
-  renderNav();
-  const m=modules[currentModule];
-  const view=document.getElementById("lessonView");
-  view.innerHTML=`<div class="lesson-card">
-    <div class="lesson-top"><div><div class="eyebrow">MODULE ${String(currentModule+1).padStart(2,"0")}</div><h3>${m.title}</h3><p>${m.desc}</p></div><div class="lesson-count">${m.lessons.length} LESSONS</div></div>
-    <div class="lesson-body"><div class="lesson-list">${m.lessons.map((l,i)=>`
-      <div class="lesson ${i===currentLesson?"selected":""} ${isDone(currentModule,i)?"done":""}" data-lesson="${i}">
-        <span class="lesson-num">${String(i+1).padStart(2,"0")}</span>
-        <div><h4>${l[0]}</h4><p>${l[1]}</p></div>
-        <span class="lesson-status ${isDone(currentModule,i)?"done":""}">${isDone(currentModule,i)?"✓ DONE":"OPEN →"}</span>
-      </div>`).join("")}</div>
-      <div class="lesson-content open"><h4>${m.lessons[currentLesson][0]}</h4><p>${m.lessons[currentLesson][1]}</p><div class="action"><b>Your action:</b> ${m.lessons[currentLesson][2]}</div>
-      <button class="pill ${isDone(currentModule,currentLesson)?"outline":"dark"} complete-btn" id="completeBtn">${isDone(currentModule,currentLesson)?"✓ Completed":"Mark lesson complete →"}</button></div>
-    </div></div>`;
-  view.querySelectorAll(".lesson").forEach(x=>x.onclick=()=>{currentLesson=+x.dataset.lesson;render();});
-  document.getElementById("completeBtn").onclick=()=>{
-    const k=key(currentModule,currentLesson);
-    if(!state.done.includes(k)) state.done.push(k); else state.done=state.done.filter(x=>x!==k);
-    save(); render();
-  };
-  updateProgress();
-}
-document.querySelector("#mobileToggle").onclick=()=>document.querySelector("#mainNav").classList.toggle("open");
-document.querySelectorAll("#mainNav a").forEach(a=>a.onclick=()=>document.querySelector("#mainNav").classList.remove("open"));
-document.getElementById("resetProgress").onclick=()=>{if(confirm("Reset all course progress?")){state={done:[]};save();render();}};
-
-document.querySelectorAll(".tool-tab").forEach(tab=>tab.onclick=()=>{
-  document.querySelectorAll(".tool-tab").forEach(x=>x.classList.remove("active"));
-  document.querySelectorAll(".tool-panel").forEach(x=>x.classList.remove("active"));
-  tab.classList.add("active");document.getElementById(tab.dataset.tool).classList.add("active");
-});
-
-function calcScore(){
-  const vals=[...document.querySelectorAll("[data-score]")].map(x=>+x.value);
-  const total=vals.reduce((a,b)=>a+b,0);
-  document.getElementById("scoreValue").textContent=total+"/60";
-  document.getElementById("scoreLabel").textContent=total>=48?"Strong candidate — validate it.":total>=36?"Promising — validate it.":"Needs work — find a better angle.";
-}
-document.querySelectorAll("[data-score]").forEach(x=>x.oninput=calcScore);
-
-function calcProfit(){
-  const p=+document.getElementById("price").value||0,c=+document.getElementById("cost").value||0,s=+document.getElementById("shipping").value||0,f=+document.getElementById("fees").value||0,a=+document.getElementById("adCost").value||0;
-  const contribution=p-c-s-(p*f/100)-a, margin=p?contribution/p*100:0;
-  document.getElementById("contribution").textContent="R"+contribution.toFixed(2);
-  document.getElementById("margin").textContent=margin.toFixed(1)+"%";
-}
-["price","cost","shipping","fees","adCost"].forEach(id=>document.getElementById(id).oninput=calcProfit);
-
-const hookTemplates={
-  "Pain point":n=>[`Still struggling with [problem]? Meet the ${n}.`,`If [problem] is driving you crazy, try this ${n}.`,`You don't need to live with [problem] — here's the ${n} we use.`],
-  "Curiosity":n=>[`Why is everyone suddenly talking about this ${n}?`,`I didn't expect this ${n} to make such a difference…`,`There is a reason this ${n} keeps showing up on my feed.`],
-  "Transformation":n=>[`From [before] to [after] with one simple ${n}.`,`This ${n} changed the way I handle [problem].`,`Watch what happens when you swap [old way] for this ${n}.`],
-  "Social proof":n=>[`People keep asking why this ${n} is selling so fast.`,`The ${n} customers keep coming back for.`,`We tested the ${n} and the response surprised us.`],
-  "Problem/solution":n=>[`Here's a simpler way to solve [problem]: the ${n}.`,`Problem: [pain]. Solution: this ${n}.`,`If you have [problem], this ${n} was made for you.`]
+const detail={
+foundation:{why:'E-commerce is simply the process of selling a product or service through a digital buying journey. The website is only one piece: the real business is the system connecting attention, offer, checkout, fulfilment and customer retention.',steps:['Choose a customer and problem before obsessing over a logo.','Create or source an offer that solves the problem.','Put the offer in front of qualified attention.','Convert attention into orders with a clear buying experience.','Deliver what you promised and support the customer.','Measure the economics and improve the weakest part of the system.'],mistakes:['Thinking a nice website creates demand.','Choosing products because they look cool rather than because a buyer has a reason to act.','Ignoring fulfilment and support until after launch.','Confusing sales with profit.'],action:'Write one sentence: “I help [customer] achieve [outcome] by providing [offer].” Then list the five steps a customer takes from discovering you to receiving the order.'},
+numbers:{why:'A store can have strong sales and still lose money. The core skill is understanding unit economics: what one order contributes after the costs that vary with that order.',steps:['Revenue = selling price × orders.','Gross profit = revenue − product and direct fulfilment costs.','Contribution profit = revenue − product/fulfilment − payment fees − variable marketing costs.','CAC = acquisition spend ÷ new customers.','AOV = revenue ÷ orders.','Break-even CAC is approximately the contribution available from a new customer before fixed overhead.'],mistakes:['Looking only at ROAS.','Forgetting shipping, refunds, transaction fees or discounts.','Scaling spend before knowing contribution margin.'],action:'Use the calculator below. Change the selling price, costs and ad cost until you know the maximum CAC your business can survive.'},
+research:{why:'Good product ideas come from understanding a buyer’s situation. Research is about collecting evidence, not convincing yourself that your idea is brilliant.',steps:['Collect 30–50 customer complaints or desired outcomes.','Group them into repeated problems and motivations.','Record exact words buyers use.','Map competitors and what they promise.','Identify gaps: poor proof, confusing offer, weak experience, missing feature or underserved segment.','Write a testable hypothesis before spending.'],mistakes:['Only reading positive reviews.','Using generic AI-generated personas with no real evidence.','Copying a competitor instead of understanding the underlying demand.'],action:'Create a research sheet with columns for source, customer quote, problem, desired outcome, objection and competitor mentioned.'},
+product:{why:'A strong product is not merely “trending.” It has a reason to be purchased, enough margin to support acquisition, and an operational path that does not destroy the customer experience.',steps:['Score demand and problem intensity.','Estimate landed cost, selling price and contribution margin.','Check whether the product is easy to demonstrate visually.','Check size, weight, breakage and return risk.','Check whether you can differentiate the offer.','Order a sample and test it yourself.'],mistakes:['Buying a large quantity before validation.','Ignoring supplier consistency.','Using exaggerated claims to make a weak product seem exciting.'],action:'Score three candidate products from 1–10 for demand, margin, differentiation, content potential, simplicity and operational risk. Pick the strongest evidence-backed candidate, not your favourite.'},
+sourcing:{why:'Sourcing is where a promising idea becomes a real physical operation. Your goal is reliable quality, predictable lead times and a cost structure that leaves room for profit.',steps:['Prepare a clear supplier brief.','Ask about MOQ, unit cost, sample cost, production time and packaging.','Request photos/videos and certifications where relevant.','Order samples from more than one supplier when practical.','Create a quality checklist.','Agree on communication, defect handling and shipping terms before a larger order.'],mistakes:['Choosing the cheapest quote automatically.','Not testing the exact final packaging.','Failing to document specifications.'],action:'Write a supplier message requesting price tiers, MOQ, sample options, lead time, packaging options and defect/replacement terms.'},
+offer:{why:'Customers rarely buy a “product” in isolation. They buy a desired result with a perceived balance of value, effort, risk and price.',steps:['Define the core outcome.','Make the product’s mechanism easy to understand.','Add proof: demonstrations, reviews, tests or credible evidence.','Remove unnecessary buying friction.','Use bonuses or bundles only when they increase useful value.','Add a clear, honest guarantee or return policy where appropriate.'],mistakes:['Fake scarcity.','Huge discounting that trains customers to wait.','Adding random bonuses that distract from the main outcome.'],action:'Write your offer as: “For [customer] who wants [outcome], [product] helps by [mechanism]. You get [core value] plus [support/proof].”'},
+pricing:{why:'Price is both an economic variable and a positioning signal. Start with the economics, then compare the market and perceived value.',steps:['Calculate landed unit cost.','Add payment, fulfilment and expected refund costs.','Choose a target contribution margin.','Check comparable offers.','Test a price that leaves room for acquisition.','Use bundles to improve AOV instead of relying only on discounts.'],mistakes:['Pricing at cost-plus without considering acquisition.','Copying a competitor’s price despite different costs.','Changing price constantly without enough data.'],action:'Calculate three scenarios: conservative, target and premium pricing. For each, write the required CAC and order volume needed to hit your monthly goal.'},
+brand:{why:'A brand is the expectation customers carry about your business. Visual identity helps, but consistency, proof, product quality and customer experience create the deeper trust.',steps:['Choose a clear audience and positioning.','Pick a memorable name that you can actually use legally and digitally.','Create a simple visual system.','Use one consistent voice.','Make product photography and copy match the promise.','Deliver the same quality after purchase.'],mistakes:['Spending weeks on a logo before validating demand.','Trying to appeal to everyone.','Copying another brand’s identity.'],action:'Create a one-page brand brief: customer, promise, personality, three words you want customers to associate with you, visual direction and tone.'},
+store:{why:'Your store has one job: make the next decision obvious. Every page should answer what this is, who it is for, why it matters, why the visitor should trust you and what to do next.',steps:['Create a simple navigation.','Make the product value obvious above the fold.','Show benefits before technical details.','Use demonstrations and real proof.','Handle shipping, returns and FAQs before checkout.','Test checkout on mobile and desktop.'],mistakes:['Cluttered homepages.','Tiny or unclear product photos.','Hiding delivery times.','Making customers hunt for returns information.'],action:'Open your store as a stranger. In 10 seconds, write down what you think is being sold, for whom and why you should care. If you cannot answer all three, rewrite the first screen.'},
+conversion:{why:'Conversion is the percentage of visitors who complete the desired action. Improving conversion can be as powerful as increasing traffic because the same traffic produces more orders.',steps:['Clarify the headline and offer.','Show the product in use.','Add credible proof.','Reduce uncertainty around shipping, returns and payment.','Improve CTA visibility and page hierarchy.','Remove unnecessary distractions.'],mistakes:['Changing ten things at once.','Using fake reviews or fabricated proof.','Optimising for clicks instead of profitable purchases.'],action:'Audit your product page and list five objections a first-time buyer might have. Add a direct answer to each one.'},
+content:{why:'Content earns attention by showing the problem, the product, the transformation or the proof. A repeatable content system is more valuable than waiting for one viral video.',steps:['Choose 3–5 repeatable content pillars.','Generate 10 hooks per pillar.','Film several variations in one session.','Lead with the problem or outcome.','Demonstrate rather than merely describe.','End with a clear next action.'],mistakes:['Starting every video with a long introduction.','Making content that gets views but attracts the wrong people.','Copying trends with no connection to the offer.'],action:'Write 10 hooks: 3 problem-based, 3 outcome-based, 2 myth-busting and 2 demonstration hooks for your product.'},
+ads:{why:'Paid advertising is a controlled way to buy attention and learn which messages convert. It is not a magic button that fixes a weak product or offer.',steps:['Know your break-even CAC.','Install tracking before spending.','Prepare multiple creative angles.','Start with a controlled test budget.','Measure click and purchase behaviour together.','Pause weak concepts and iterate winners rather than endlessly tweaking audiences.'],mistakes:['Scaling immediately after one good day.','Judging ads only by likes.','Changing campaign structure before collecting useful data.'],action:'Create three ad concepts with different customer problems and three hooks for each. Your first goal is learning which message earns qualified attention.'},
+tracking:{why:'Without reliable measurement, you cannot tell whether a change helped. Tracking should answer where visitors came from, what they did and whether the resulting orders were profitable.',steps:['Define your key events.','Use consistent UTM naming.','Verify purchase values.','Compare platform data with store orders.','Track spend and contribution, not vanity metrics.','Keep a simple weekly scorecard.'],mistakes:['Assuming platform attribution is perfect.','Changing tracking halfway through a test.','Ignoring refunds and cancellations.'],action:'Create a weekly dashboard with sessions, conversion rate, orders, revenue, AOV, ad spend, CAC, contribution profit and refund rate.'},
+operations:{why:'Operations turns a sale into a delivered promise. A great ad followed by late or damaged delivery creates refunds, chargebacks and negative reviews.',steps:['Map every order step.','Set realistic processing and delivery expectations.','Use tracking where practical.','Define exceptions: address errors, lost parcels, damaged items.','Document who handles each exception.'],mistakes:['Promising delivery faster than your carrier can reliably provide.','No process for stockouts.','Leaving customers without updates.'],action:'Draw your order flow from “payment received” to “customer confirms delivery.” Mark every point where something can fail and create a backup process.'},
+analytics:{why:'Analytics turns opinions into hypotheses. The key is to find the biggest leak in the funnel and improve that before chasing advanced tactics.',steps:['Measure traffic.','Measure product-page engagement.','Measure add-to-cart.','Measure checkout started.','Measure purchase.','Measure post-purchase repeat behaviour.'],mistakes:['Obsessing over one metric.','Comparing different traffic sources without context.','Making decisions from tiny samples.'],action:'Write your funnel as percentages. Identify the single stage with the largest realistic improvement opportunity and design one test for it.'},
+retention:{why:'The first purchase is not necessarily the end of the relationship. Follow-up communication can answer questions, collect reviews, reduce returns and create repeat purchases.',steps:['Send a useful order confirmation.','Provide usage or setup guidance.','Ask for feedback after the customer has had time to use the product.','Recommend complementary products when relevant.','Win back inactive customers with useful reasons to return.'],mistakes:['Emailing only when you want money.','Over-messaging.','Offering discounts when the real problem is poor product experience.'],action:'Draft five messages: welcome, abandoned cart, order education, review request and win-back.'},
+scale:{why:'Scaling means increasing volume without letting quality, cash flow or economics collapse. A business is ready to scale when the core system is repeatable.',steps:['Confirm profitable unit economics.','Confirm supplier/fulfilment capacity.','Build creative production capacity.','Increase spend gradually.','Monitor marginal CAC and contribution.','Document what works.'],mistakes:['Scaling because revenue looks exciting while contribution is negative.','Running out of inventory.','Adding complexity too early.'],action:'Write your scale gates: the exact margin, CAC, stock coverage, fulfilment capacity and cash buffer you require before increasing spend.'},
+systems:{why:'Systems make results repeatable. An SOP is simply a clear description of how a recurring task gets done to a defined standard.',steps:['Choose one recurring task.','Write the desired outcome.','List the exact steps.','Add screenshots/examples if useful.','Define quality checks.','Update the SOP when the process changes.'],mistakes:['Writing vague SOPs.','Documenting everything before knowing what actually works.','Never reviewing the document.'],action:'Write your first SOP for either processing an order, uploading a product, posting content or handling a customer return.'},
+finance:{why:'Profit on a spreadsheet does not guarantee cash in the bank. Inventory, ad spend, supplier deposits, refunds and payment delays can create cash pressure.',steps:['Separate business and personal money.','Track fixed and variable costs.','Forecast inventory purchases.','Reserve for refunds and taxes.','Know your cash runway.','Review a simple cash forecast weekly.'],mistakes:['Spending every rand of revenue.','Ignoring tax obligations.','Buying too much inventory because unit cost is lower.'],action:'Build a 13-week cash forecast with opening cash, expected sales receipts, supplier payments, ads, fulfilment, refunds, taxes and closing cash.'},
+execution:{why:'Knowledge only becomes valuable when it turns into shipped work. Your first 90 days should be a sequence of evidence-building milestones, not 90 days of endless research.',steps:['Weeks 1–2: market and customer research.','Weeks 3–4: product, supplier and offer validation.','Weeks 5–6: store, content and tracking.','Weeks 7–8: launch controlled traffic.','Weeks 9–10: diagnose and improve the funnel.','Weeks 11–12: strengthen fulfilment, retention and prepare to scale.'],mistakes:['Rebuilding the website every week.','Waiting for perfection before testing demand.','Changing the product before understanding why it failed.'],action:'Put these milestones on a calendar. Give every week one measurable outcome and one deadline.'}
 };
-function generateHooks(){
-  const n=document.getElementById("productName").value.trim()||"product",a=document.getElementById("angle").value;
-  document.getElementById("hooksOutput").innerHTML=hookTemplates[a](n).map((h,i)=>`<div class="hook">${i+1}. ${h}</div>`).join("");
-}
-document.getElementById("generateHooks").onclick=generateHooks;
-generateHooks();
-
-document.querySelectorAll("#checklist input").forEach(x=>x.onchange=()=>{
-  const all=[...document.querySelectorAll("#checklist input")],done=all.filter(i=>i.checked).length;
-  document.getElementById("checkCount").textContent=`${done}/${all.length}`;
-});
-
-render();calcScore();calcProfit();updateProgress();
+function lessonData(m,l){const [title,short,tag]=m.lessons[l];let d=detail[tag]||detail.foundation;return {title,short,tag,why:d.why,steps:d.steps,mistakes:d.mistakes,action:d.action};}
+let currentModule=0,currentLesson=0;
+const key='ecom_v2_done';let done=JSON.parse(localStorage.getItem(key)||'{}');
+function allLessons(){return modules.flatMap((m,mi)=>m.lessons.map((_,li)=>({mi,li})))}
+function isDone(mi,li){return !!done[`${mi}-${li}`]}
+function progress(){const a=allLessons(),n=a.filter(x=>isDone(x.mi,x.li)).length;return Math.round(n/a.length*100)}
+function renderNav(){const el=document.getElementById('moduleNav');el.innerHTML=modules.map((m,i)=>`<button class="module-link ${i===currentModule?'active':''}" data-module="${i}"><span class="num">${String(i+1).padStart(2,'0')}</span><span>${m.name}</span></button>`).join('');el.querySelectorAll('.module-link').forEach(x=>x.onclick=()=>{currentModule=+x.dataset.module;currentLesson=0;render();location.hash=`module-${currentModule+1}`;document.getElementById('lessonView').scrollIntoView({behavior:'smooth',block:'start'});});}
+function render(){renderNav();const m=modules[currentModule],d=lessonData(m,currentLesson),total=m.lessons.length,globalIndex=allLessons().findIndex(x=>x.mi===currentModule&&x.li===currentLesson),prev=allLessons()[globalIndex-1],next=allLessons()[globalIndex+1];document.getElementById('lessonView').innerHTML=`<div class="lesson-shell"><div class="lesson-hero"><div class="eyebrow">MODULE ${currentModule+1} · LESSON ${currentLesson+1} OF ${total}</div><h2>${d.title}</h2><p>${d.short}</p><div class="lesson-meta"><span class="tag">${d.tag}</span><span class="tag">Practical lesson</span><span class="tag">~10–20 min</span></div></div><div class="lesson-body"><h3>What this means</h3><p>${d.why}</p><h3>Step-by-step</h3><ol>${d.steps.map(s=>`<li>${s}</li>`).join('')}</ol><div class="callout"><strong>Rule of thumb:</strong> Keep the next decision simple. Do the smallest test that can give you useful evidence.</div><h3>Common mistakes</h3><ul>${d.mistakes.map(s=>`<li>${s}</li>`).join('')}</ul><div class="action-box"><h3>Your action</h3><p>${d.action}</p></div></div><div class="complete-row"><span>${isDone(currentModule,currentLesson)?'✓ Lesson completed':'Complete this lesson when you have done the action.'}</span><button class="complete-btn ${isDone(currentModule,currentLesson)?'done':''}" id="completeBtn">${isDone(currentModule,currentLesson)?'Completed ✓':'Mark complete'}</button></div></div><div class="lesson-nav"><button ${prev?'':'disabled'} id="prevLesson">← Previous<br><small>${prev?modules[prev.mi].lessons[prev.li][0]:'Start of course'}</small></button><button ${next?'':'disabled'} id="nextLesson">Next →<br><small>${next?modules[next.mi].lessons[next.li][0]:'Course complete'}</small></button></div>`;document.getElementById('completeBtn').onclick=()=>{const k=`${currentModule}-${currentLesson}`;done[k]=!done[k];localStorage.setItem(key,JSON.stringify(done));render();updateProgress()};if(prev)document.getElementById('prevLesson').onclick=()=>go(prev.mi,prev.li);if(next)document.getElementById('nextLesson').onclick=()=>go(next.mi,next.li);updateProgress();}
+function go(mi,li){currentModule=mi;currentLesson=li;render();location.hash=`lesson-${mi+1}-${li+1}`;document.getElementById('lessonView').scrollIntoView({behavior:'smooth',block:'start'});}
+function updateProgress(){const p=progress();document.getElementById('progressText').textContent=`${p}% complete`;document.getElementById('sidePercent').textContent=`${p}%`;document.getElementById('sideBar').style.width=p+'%';document.getElementById('topProgress').style.width=p+'%';}
+function initHash(){const h=location.hash.match(/lesson-(\d+)-(\d+)/);if(h){currentModule=Math.min(+h[1]-1,modules.length-1);currentLesson=Math.min(+h[2]-1,modules[currentModule].lessons.length-1)}}
+const scoreNames=['Clear problem','Strong demand','Healthy margin','Easy to demonstrate','Simple to ship','Differentiation','Low return risk','Repeat purchase potential','Audience is reachable','Solves an urgent desire'];
+function calcScore(){const el=document.getElementById('scoreInputs');if(!el)return;el.innerHTML=scoreNames.map((n,i)=>`<div class="score-item"><label><span>${n}</span><b id="sv${i}">5</b></label><input type="range" min="0" max="5" value="5" data-score="${i}"></div>`).join('');el.querySelectorAll('input').forEach(x=>x.oninput=()=>{document.getElementById('sv'+x.dataset.score).textContent=x.value;const sum=[...el.querySelectorAll('input')].reduce((a,b)=>a+ +b.value,0);document.getElementById('scoreValue').textContent=`${sum}/50`});el.querySelectorAll('input')[0].dispatchEvent(new Event('input'));}
+function calcProfit(){const ids=['price','cost','ship','fees','adcost'];ids.forEach(id=>document.getElementById(id).oninput=()=>{const p=+price.value||0,c=+cost.value||0,s=+ship.value||0,f=+fees.value||0,a=+adcost.value||0;const v=p-c-s-(p*f/100)-a;document.getElementById('profitValue').textContent=(v>=0?'R':'-R')+Math.abs(v).toFixed(2)});document.getElementById('price').dispatchEvent(new Event('input'));}
+function hooks(){const p=document.getElementById('hookProduct').value.trim()||'this product';const arr=[`“I wish I knew this before buying ${p}…”`,`“If you struggle with [problem], watch what happens when you use ${p}.”`,`“3 reasons people choose ${p} — and the one that matters most.”`,`“POV: you finally find a simple way to improve [desired outcome].”`,`“I tested ${p} for 7 days. Here’s what actually changed.”`,`“Stop doing [old method] if your goal is [outcome].”`];document.getElementById('hookOutput').innerHTML=arr.map(x=>`<div class="hook">${x}</div>`).join('')}
+function tools(){document.querySelectorAll('.tool-tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tool-tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.tool-panel').forEach(x=>x.classList.add('hidden'));b.classList.add('active');document.getElementById(b.dataset.tool).classList.remove('hidden')});}
+function launch(){const items=['Customer/problem chosen','Product validated','Supplier/sample checked','Unit economics calculated','Offer and positioning written','Store pages built','Payments and policies checked','Tracking tested','10+ creative concepts ready','Fulfilment process tested','Support/returns process ready','Launch budget and stop rules defined'];document.getElementById('launchList').innerHTML=items.map((x,i)=>`<label><input type="checkbox" data-launch="${i}"> ${x}</label>`).join('');document.querySelectorAll('[data-launch]').forEach(x=>{x.checked=localStorage.getItem('launch'+x.dataset.launch)==='1';x.onchange=()=>localStorage.setItem('launch'+x.dataset.launch,x.checked?'1':'0')});}
+function faq(){const qs=[['Do I need a lot of money?','Not necessarily. Your starting budget determines what model and testing speed are realistic. Start with the smallest experiment that can validate demand, while keeping enough cash for fulfilment and mistakes.'],['Should I build the website before validating the product?','Build enough to test the offer, but do not spend weeks polishing a store before you know whether the market responds.'],['How many products should I launch with?','Beginners usually benefit from a focused offer rather than a giant catalogue. One strong product can make learning faster.'],['How long until the first sale?','There is no guaranteed timeline. Focus on completing the research, offer, store and traffic tests rather than chasing a promised number of days.'],['Should I use organic content or paid ads?','Both can work. Organic content is useful for learning messages cheaply; paid ads can buy controlled traffic when your economics and tracking are ready.'],['What if the launch fails?','Treat it as a diagnosis. Determine whether the issue was demand, offer, creative, traffic quality, conversion, price, fulfilment or economics before changing everything.']];document.getElementById('faqList').innerHTML=qs.map((q,i)=>`<div class="faq-item"><div class="faq-q">${q[0]}<span>+</span></div><div class="faq-a"><p>${q[1]}</p></div></div>`).join('');document.querySelectorAll('.faq-q').forEach(x=>x.onclick=()=>x.parentElement.classList.toggle('open'));}
+document.getElementById('resetProgress').onclick=()=>{if(confirm('Reset course progress?')){done={};localStorage.removeItem(key);render();}};document.getElementById('generateHooks').onclick=hooks;document.getElementById('mobileToggle').onclick=()=>document.getElementById('mainNav').classList.toggle('mobile-open');
+initHash();document.getElementById('moduleCount').textContent=modules.length;document.getElementById('lessonCount').textContent=allLessons().length;render();calcScore();calcProfit();tools();launch();faq();
